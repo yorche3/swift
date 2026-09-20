@@ -41,10 +41,15 @@ public class NaiveSort {
     }
     var result = array
     for i in 0..<result.count - 1 {
+      var swapped = false
       for j in 0..<result.count - 1 - i {
         if result[j] > result[j + 1] {
           result.swapAt(j, j + 1)
+          swapped = true
         }
+      }
+      if !swapped {
+        break
       }
     }
     return result
