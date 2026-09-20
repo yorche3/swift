@@ -15,3 +15,53 @@
 //
 // Implementación pendiente: la escribe el autor. Esta delegación solo genera el
 // esqueleto y las pruebas unitarias.
+public class NaiveSort {
+  public static func selection_sort(_ array: [Int]) -> [Int] {
+    if array.count <= 1 {
+      return array
+    }
+    var result = array
+    for i in 0..<result.count - 1 {
+      var minIndex = i
+      for j in i + 1..<result.count {
+        if result[j] < result[minIndex] {
+          minIndex = j
+        }
+      }
+      if minIndex != i {
+        result.swapAt(i, minIndex)
+      }
+    }
+    return result
+  }
+
+  public static func bubble_sort(_ array: [Int]) -> [Int] {
+    if array.count <= 1 {
+      return array
+    }
+    var result = array
+    for i in 0..<result.count - 1 {
+      for j in 0..<result.count - 1 - i {
+        if result[j] > result[j + 1] {
+          result.swapAt(j, j + 1)
+        }
+      }
+    }
+    return result
+  }
+
+  public static func insertion_sort(_ array: [Int]) -> [Int] {
+    if array.count <= 1 {
+      return array
+    }
+    var result = array
+    for i in 1..<result.count {
+      var j = i
+      while j > 0 && result[j] < result[j - 1] {
+        result.swapAt(j, j - 1)
+        j -= 1
+      }
+    }
+    return result
+  }
+}
