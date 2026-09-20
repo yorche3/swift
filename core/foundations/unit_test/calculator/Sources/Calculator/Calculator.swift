@@ -1,4 +1,4 @@
-public enum Calculator {
+public class Calculator {
     public static func addition(_ a: Int, _ b: Int) -> Int {
         a + b
     }

@@ -9,6 +9,7 @@ Proyectos en **Swift**, con scripts independientes ejecutados mediante `swift` o
 | Módulo | Descripción |
 | ------ | ----------- |
 | [`core/foundations/`](core/foundations/) | **Fase 0 — Fundamentos**: `helloworld`, `hellouser`, `unit_test/calculator`, `numbers` |
+| [`core/algorithms/`](core/algorithms/) | **Fase 1 — Algoritmos Puros**: `naive_sort` |
 
 ---
 
@@ -32,6 +33,10 @@ swift test
 
 # Numbers tests
 cd ../../numbers
+swift test
+
+# Naive Sort tests
+cd ../../algorithms/naive_sort
 swift test
 ```
 
