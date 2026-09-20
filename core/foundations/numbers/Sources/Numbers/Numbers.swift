@@ -1,4 +1,4 @@
-public enum Numbers {
+public class Numbers {
     public static func sum_of_first_n_rec(_ n: Int) -> Int {
         if n <= 0 {
             return 0
