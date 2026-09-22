@@ -61,11 +61,13 @@ public class NaiveSort {
     }
     var result = array
     for i in 1..<result.count {
-      var j = i
-      while j > 0 && result[j] < result[j - 1] {
-        result.swapAt(j, j - 1)
+      let key = result[i]
+      var j = i - 1
+      while j >= 0 && result[j] > key {
+        result[j + 1] = result[j]
         j -= 1
       }
+      result[j + 1] = key
     }
     return result
   }
