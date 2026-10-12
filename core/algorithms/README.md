@@ -11,6 +11,7 @@ Los módulos de esta fase trabajan sobre **arrays de valor** (`[Int]`), que se o
 | Módulo | Especificación | Enfoque | Tests | Estado |
 |--------|---------------|---------|:-----:|:------:|
 | [`naive_sort/`](naive_sort/) | [05_Naive_Sort](https://yorche3.github.io/programming_languages/core/algorithms/05_Naive_Sort/) | `swift build` + `swift test` (XCTest) | 21 | ✅ |
+| [`data_structures_basics/`](data_structures_basics/) | [06_Data_Structures_Basics](https://yorche3.github.io/programming_languages/core/algorithms/06_Data_Structures_Basics/) | `swift build` + `swift test` (XCTest) | 4 | ✅ |
 
 ---
 
@@ -18,13 +19,24 @@ Los módulos de esta fase trabajan sobre **arrays de valor** (`[Int]`), que se o
 
 ```text
 algorithms/
-└── naive_sort/                          # 05_Naive_Sort
-    ├── Package.swift                    # swift-tools-version 6.3, target + testTarget
-    ├── .gitignore                       # .build/, .swiftpm/ y artefactos de Xcode
-    ├── Sources/NaiveSort/
-    │   └── NaiveSort.swift              # 3 métodos estáticos
-    ├── Tests/NaiveSortTests/
-    │   └── NaiveSortTests.swift         # 3 tests × 7 casos
+├── naive_sort/                          # 05_Naive_Sort
+│   ├── Package.swift                    # swift-tools-version 6.3, target + testTarget
+│   ├── .gitignore                       # .build/, .swiftpm/ y artefactos de Xcode
+│   ├── Sources/NaiveSort/
+│   │   └── NaiveSort.swift              # 3 métodos estáticos
+│   ├── Tests/NaiveSortTests/
+│   │   └── NaiveSortTests.swift         # 3 tests × 7 casos
+│   └── README.md
+└── data_structures_basics/              # 06_Data_Structures_Basics
+    ├── Package.swift
+    ├── .gitignore
+    ├── Sources/data_structures_basics/
+    │   ├── Node.swift
+    │   ├── LinkedList.swift
+    │   ├── Stack.swift
+    │   └── Queue.swift
+    ├── Tests/data_structures_basicsTests/
+    │   └── DataStructuresBasicsTests.swift
     └── README.md
 ```
 
@@ -57,6 +69,11 @@ algorithms/
 ```bash
 # Naive Sort Tests
 cd naive_sort
+swift build
+swift test
+
+# Data Structures Basics Tests
+cd ../data_structures_basics
 swift build
 swift test
 ```
