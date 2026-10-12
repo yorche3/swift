@@ -27,25 +27,35 @@ public struct Stack {
 
     /// `true` solo si no hay nodos.
     public var isEmpty: Bool {
-        false
+        count == 0
     }
 
     /// Número de nodos almacenados. El centinela es -1 mientras sea un esqueleto.
     public var size: Int {
-        -1
+        count
     }
 
     /// Valor de la cima, o -1 cuando la pila está vacía. No muta.
     public var peek: Int {
-        -1
+        topNode?.value ?? -1
     }
 
     /// Apila `value` sobre la cima. O(1).
-    public mutating func push(_ value: Int) {}
+    public mutating func push(_ value: Int) {
+        let node = Node(value)
+        node.next = topNode
+        topNode = node
+        count += 1
+    }
 
     /// Desapila y devuelve el valor de la cima, o -1 cuando está vacía. O(1).
     @discardableResult
     public mutating func pop() -> Int {
-        -1
+        guard let node = topNode else {
+            return -1
+        }
+        topNode = node.next
+        count -= 1
+        return node.value
     }
 }

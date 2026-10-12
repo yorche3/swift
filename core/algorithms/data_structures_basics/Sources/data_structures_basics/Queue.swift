@@ -29,25 +29,42 @@ public struct Queue {
 
     /// `true` solo si no hay nodos.
     public var isEmpty: Bool {
-        false
+        count == 0
     }
 
     /// Número de nodos almacenados. El centinela es -1 mientras sea un esqueleto.
     public var size: Int {
-        -1
+        count
     }
 
     /// Valor del frente, o -1 cuando la cola está vacía. No muta.
     public var peek: Int {
-        -1
+        frontNode?.value ?? -1
     }
 
     /// Encola `value` por el final. O(1).
-    public mutating func enqueue(_ value: Int) {}
+    public mutating func enqueue(_ value: Int) {
+        let node = Node(value)
+        if let rear = rearNode {
+            rear.next = node
+        } else {
+            frontNode = node
+        }
+        rearNode = node
+        count += 1
+    }
 
     /// Desencola y devuelve el valor del frente, o -1 cuando está vacía. O(1).
     @discardableResult
     public mutating func dequeue() -> Int {
-        -1
+        guard let node = frontNode else {
+            return -1
+        }
+        frontNode = node.next
+        if frontNode == nil {
+            rearNode = nil
+        }
+        count -= 1
+        return node.value
     }
 }

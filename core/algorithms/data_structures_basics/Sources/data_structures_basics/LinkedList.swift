@@ -30,29 +30,65 @@ public struct LinkedList {
 
     /// Valor de la cabeza, o -1 cuando la lista está vacía. No muta.
     public var head: Int {
-        -1
+        headNode?.value ?? -1
     }
 
     /// `true` solo si no hay nodos.
     public var isEmpty: Bool {
-        false
+        count == 0
     }
 
     /// Número de nodos almacenados. El centinela es -1 mientras sea un esqueleto.
     public var size: Int {
-        -1
+        count
     }
 
     /// Inserta `value` al principio. O(1).
-    public mutating func insertHead(_ value: Int) {}
+    public mutating func insertHead(_ value: Int) {
+        let node = Node(value)
+        node.next = headNode
+        headNode = node
+        if tailNode == nil {
+            tailNode = node
+        }
+        count += 1
+    }
 
     /// Inserta `value` al final. O(1).
-    public mutating func insertTail(_ value: Int) {}
+    public mutating func insertTail(_ value: Int) {
+        let node = Node(value)
+        if tailNode != nil {
+            tailNode!.next = node
+        }
+        tailNode = node
+        if headNode == nil {
+            headNode = node
+        }
+        count += 1
+    }
 
     /// Borra la primera aparición de `value`. O(n).
     /// Devuelve `true` cuando borró un nodo y `false` cuando el valor no estaba.
     @discardableResult
     public mutating func delete(_ value: Int) -> Bool {
-        false
+        var current = headNode
+        var previous: Node? = nil
+        while current != nil {
+            if current!.value == value {
+                if previous == nil {
+                    headNode = current!.next
+                } else {
+                    previous!.next = current!.next
+                }
+                if current!.next == nil {
+                    tailNode = previous
+                }
+                count -= 1
+                return true
+            }
+            previous = current
+            current = current!.next
+        }
+        return false
     }
 }
