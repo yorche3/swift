@@ -8,13 +8,13 @@ Implementación de la especificación [01_Hello_World](https://yorche3.github.io
 
 | Archivo | Propósito |
 |---------|-----------|
-| [`helloworld.swift`](helloworld.swift) | Código fuente: imprime `"Hello, World! from Swift!"` en la salida estándar. |
+| [`hello_world.swift`](hello_world.swift) | Código fuente: imprime `"Hello, World! from Swift!"` en la salida estándar. |
 
 **Estructura de directorios esperada:**
 
 ```text
 helloworld/
-├── helloworld.swift  # Código fuente
+├── hello_world.swift  # Código fuente
 └── README.md         # Este archivo
 ```
 
@@ -34,7 +34,7 @@ helloworld/
    mkdir -p swift/core/foundations/helloworld
    ```
 
-2. Escribir el archivo `helloworld.swift` con el código fuente.
+2. Escribir el archivo `hello_world.swift` con el código fuente.
 
 3. Ejecutarlo con `swift` o compilarlo con `swiftc`.
 
@@ -82,14 +82,14 @@ In this environment, Swift is managed through Swiftly. The configuration is load
 
 ```bash
 cd swift/core/foundations/helloworld
-swift helloworld.swift
+swift hello_world.swift
 ```
 
 ### Compilar y ejecutar / Compile and run
 
 ```bash
 cd swift/core/foundations/helloworld
-swiftc helloworld.swift -o helloworld
+swiftc hello_world.swift -o helloworld
 ./helloworld
 ```
 
