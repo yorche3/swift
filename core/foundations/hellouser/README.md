@@ -10,13 +10,13 @@ Solicita un nombre mediante la entrada estándar y muestra un saludo personaliza
 
 | Archivo | Propósito |
 |---------|-----------|
-| [`hellouser.swift`](hellouser.swift) | Código fuente: solicita un nombre, lo lee desde la entrada estándar y muestra un saludo. |
+| [`hello_user.swift`](hello_user.swift) | Código fuente: solicita un nombre, lo lee desde la entrada estándar y muestra un saludo. |
 
 **Estructura de directorios esperada:**
 
 ```text
 hellouser/
-├── hellouser.swift  # Código fuente
+├── hello_user.swift  # Código fuente
 └── README.md        # Este archivo
 ```
 
@@ -50,7 +50,7 @@ The program flow is:
    mkdir -p swift/core/foundations/hellouser
    ```
 
-2. Escribir el archivo `hellouser.swift` con el código fuente.
+2. Escribir el archivo `hello_user.swift` con el código fuente.
 
 3. Ejecutarlo con `swift` o compilarlo con `swiftc`.
 
@@ -103,14 +103,14 @@ In this environment, Swift is managed through Swiftly. The configuration is load
 
 ```bash
 cd swift/core/foundations/hellouser
-printf 'Ada\n' | swift hellouser.swift
+printf 'Ada\n' | swift hello_user.swift
 ```
 
 ### Compilar y ejecutar / Compile and run
 
 ```bash
 cd swift/core/foundations/hellouser
-swiftc hellouser.swift -o hellouser
+swiftc hello_user.swift -o hellouser
 printf 'Ada\n' | ./hellouser
 ```
 
