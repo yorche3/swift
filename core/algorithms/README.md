@@ -12,6 +12,7 @@ Los módulos de esta fase trabajan sobre **arrays de valor** (`[Int]`), que se o
 |--------|---------------|---------|:-----:|:------:|
 | [`naive_sort/`](naive_sort/) | [05_Naive_Sort](https://yorche3.github.io/programming_languages/core/algorithms/05_Naive_Sort/) | `swift build` + `swift test` (XCTest) | 21 | ✅ |
 | [`data_structures_basics/`](data_structures_basics/) | [06_Data_Structures_Basics](https://yorche3.github.io/programming_languages/core/algorithms/06_Data_Structures_Basics/) | `swift build` + `swift test` (XCTest) | 4 | ✅ |
+| [`data_structures_advanced/`](data_structures_advanced/) | [07_Data_Structures_Advanced](https://yorche3.github.io/programming_languages/core/algorithms/07_Data_Structures_Advanced/) | `swift build` + `swift test` (XCTest) | 23 | ✅ |
 
 ---
 
@@ -27,7 +28,7 @@ algorithms/
 │   ├── Tests/NaiveSortTests/
 │   │   └── NaiveSortTests.swift         # 3 tests × 7 casos
 │   └── README.md
-└── data_structures_basics/              # 06_Data_Structures_Basics
+├── data_structures_basics/              # 06_Data_Structures_Basics
     ├── Package.swift
     ├── .gitignore
     ├── Sources/data_structures_basics/
@@ -37,6 +38,19 @@ algorithms/
     │   └── Queue.swift
     ├── Tests/data_structures_basicsTests/
     │   └── DataStructuresBasicsTests.swift
+    └── README.md
+└── data_structures_advanced/            # 07_Data_Structures_Advanced
+    ├── Package.swift
+    ├── .gitignore
+    ├── Sources/data_structures_advanced/
+    │   ├── BinaryTree.swift
+    │   ├── Graph.swift
+    │   ├── GraphNode.swift
+    │   ├── Node.swift
+    │   ├── TreeNode.swift
+    │   └── data_structures_advanced.swift
+    ├── Tests/data_structures_advancedTests/
+    │   └── DataStructuresAdvancedTests.swift
     └── README.md
 ```
 
@@ -74,6 +88,11 @@ swift test
 
 # Data Structures Basics Tests
 cd ../data_structures_basics
+swift build
+swift test
+
+# Data Structures Advanced Tests
+cd ../data_structures_advanced
 swift build
 swift test
 ```
