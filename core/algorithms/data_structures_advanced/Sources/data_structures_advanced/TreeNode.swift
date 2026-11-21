@@ -1,15 +1,10 @@
 public final class TreeNode: Node {
+    public var left: TreeNode?
+    public var right: TreeNode?
+
     public override init(_ value: Int) {
         super.init(value)
-    }
-
-    public var left: TreeNode? {
-        get { nil }
-        set {}
-    }
-
-    public var right: TreeNode? {
-        get { nil }
-        set {}
+        self.left = nil
+        self.right = nil
     }
 }

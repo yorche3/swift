@@ -292,4 +292,16 @@ final class GraphTests: XCTestCase {
         XCTAssertEqual(graph.vertexCount, 1, "Graph self-loop should have 1 vertex")
         XCTAssertEqual(graph.edgeCount, 1, "Graph self-loop should have 1 edge")
     }
+
+    func testNeighborResultIsolation() {
+        var graph = makeGraph([Fixtures.vertexTen, Fixtures.vertexThirty, Fixtures.vertexFifty])
+        XCTAssertTrue(graph.addEdge(Fixtures.vertexTen, Fixtures.vertexThirty), "Graph isolation should add 10->30")
+        let saved = graph.getNeighbors(Fixtures.vertexTen)
+        XCTAssertTrue(graph.addEdge(Fixtures.vertexTen, Fixtures.vertexFifty), "Graph isolation should add 10->50")
+        XCTAssertEqual(saved, [Fixtures.vertexThirty], "Graph isolation should keep saved neighbors of 10 as [30]")
+        XCTAssertEqual(graph.getNeighbors(Fixtures.vertexTen), [Fixtures.vertexThirty, Fixtures.vertexFifty],
+                    "Graph isolation should have [30, 50] as fresh neighbors of 10")
+        XCTAssertEqual(graph.vertexCount, 3, "Graph isolation should have 3 vertices")
+        XCTAssertEqual(graph.edgeCount, 2, "Graph isolation should have 2 edges")
+    }
 }
